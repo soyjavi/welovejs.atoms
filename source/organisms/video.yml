@@ -1,0 +1,27 @@
+children:
+  - Organism.Header:
+      children:
+        - Molecule.Navigation:
+            children:
+              - Atom.Button:
+                  events:
+                    - touch
+                  icon: back
+            style: left
+        - Atom.Heading:
+            size: h1
+            value: Video
+  - Organism.Section:
+      children:
+        - Atom.Iframe:
+            style: big
+            id: iframe
+        - Atom.Heading:
+            size: h1
+            style: margin-all
+            id: title
+        - Atom.Text:
+            style: margin-all
+            id: description
+      id: info
+id: video

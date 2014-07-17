@@ -1,0 +1,83 @@
+children:
+  - Organism.Header:
+      children:
+        - Atom.Heading:
+            size: h1
+            value: WeLoveJS
+        - Molecule.Navigation:
+            children:
+              - Atom.Button:
+                  events:
+                    - touch
+                  icon: navicon
+                  path: options
+            style: left
+  - Organism.Section:
+      children:
+        - Molecule.List:
+            children: []
+            id: list
+            bind:
+              entity: __.Entity.Video
+              atom: Atom.Li
+              events:
+                - touch
+              create: true
+              update: true
+              destroy: true
+            events:
+              - select
+      id: videos
+      style: padding
+  - Organism.Section:
+      children:
+        - Molecule.Form:
+            children:
+              - Atom.Label:
+                  value: Credentials
+                  icon: ios7-cog
+              - Atom.Input:
+                  type: text
+                  name: username
+                  placeholder: username...
+                  style: align center
+                  required: "true"
+              - Atom.Input:
+                  type: text
+                  name: password
+                  style: align center
+                  placeholder: password...
+              - Atom.Button:
+                  events:
+                    - touch
+                  style: big fluid accept
+                  text: Sign in
+              - Atom.Button:
+                  text: Sign up
+                  style: fluid small
+                  events:
+                    - touch
+                  callbacks:
+                    - onSignup
+            events:
+              - change
+              - error
+      id: profile
+      style: padding
+  - Organism.Footer:
+      children:
+        - Molecule.Navigation:
+            children:
+              - Atom.Button:
+                  events:
+                    - touch
+                  icon: ios7-videocam-outline
+                  path: main/videos
+              - Atom.Button:
+                  events:
+                    - touch
+                  icon: ios7-cog-outline
+                  path: main/profile
+id: main
+events:
+  - show
